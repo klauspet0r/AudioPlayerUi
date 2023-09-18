@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: ab1c28a6eab73184586da10428feb29e, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: bf5984e2ca324e24aa9c6b20f0182af9, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: bd4e554b943227a4397ddb03323cf787, type: 3}
   m_SortingOrder: 0
 --- !u!4 &165847774
 Transform:
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e58a1f8722a7ef4b905e5a35212a9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiTemplate: {fileID: 9197481963319205126, guid: bf5984e2ca324e24aa9c6b20f0182af9, type: 3}
+  uiTemplate: {fileID: 9197481963319205126, guid: bd4e554b943227a4397ddb03323cf787, type: 3}
   audioplayer: {fileID: 884017167}
 --- !u!1 &705507993
 GameObject:

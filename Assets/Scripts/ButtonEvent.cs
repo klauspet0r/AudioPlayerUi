@@ -9,9 +9,10 @@ public class ButtonEvent : MonoBehaviour
 {   
     public VisualTreeAsset uiTemplate;
 
-    private Button PlayPauseButton;
+    public Button PlayButton;
+    public Button PauseButton;
 
-    private VisualElement canvas;
+    public VisualElement canvas;
 
     public AudioPlayer audioplayer;
 
@@ -20,16 +21,18 @@ public class ButtonEvent : MonoBehaviour
     {
         if (uiTemplate != null)
         {
-            VisualElement canvas = uiTemplate.CloneTree();
-            PlayPauseButton = canvas.Q<Button>("PlayPause");
-            Debug.Log(PlayPauseButton.name);
+            canvas = uiTemplate.CloneTree();
+            Debug.Log("canvas childCount is: " + canvas.childCount);
+            PlayButton = canvas.Q<Button>("Play");
+            PauseButton = canvas.Q<Button>("Pause");
         }
 
-        if (PlayPauseButton != null)
+        if (PlayButton != null && PauseButton != null)
         {
             //PlayPauseButton.clickable.clicked += audioplayer.PlayAudio;
-            PlayPauseButton.clickable.clicked += HandleButtonClick;
-            Debug.Log(PlayPauseButton.clickable.ToString());
+            PlayButton.clickable.clicked += audioplayer.PlayAudio;
+            PauseButton.clickable.clicked += audioplayer.PauseAudio;
+            
         }
         else
         {
@@ -37,6 +40,7 @@ public class ButtonEvent : MonoBehaviour
         }
         
         GetComponent<UIDocument>().rootVisualElement.Add(canvas);
+        Debug.Log("canvas childCount is: " + canvas.childCount);
     }
 
     private void HandleButtonClick()
